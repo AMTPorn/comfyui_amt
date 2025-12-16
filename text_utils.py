@@ -7,7 +7,7 @@ class AMTStringDeduplication:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "prompt": ("STRING", {"default": "Generate image based on provided image(s).", "multiline": True}),
+                "prompt": ("STRING", {"default": "Deduplicate provided string(s).", "multiline": True}),
             },
         }
     RETURN_TYPES = ("STRING")
