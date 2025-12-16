@@ -10,7 +10,7 @@ class AMTStringDeduplication:
                 "prompt": ("STRING", {"default": "Deduplicate provided string(s).", "multiline": True}),
             },
         }
-    RETURN_TYPES = ("STRING")
+    RETURN_TYPES = ("STRING",)
     FUNCTION = "deduplicate"
 
     def deduplicate(self, prompt):
@@ -27,6 +27,6 @@ class AMTStringDeduplication:
         
         deduplicated_prompt = ', '.join(unique_items)
         
-        return (deduplicated_prompt)
+        return (deduplicated_prompt,)
 
 
