@@ -140,6 +140,7 @@ class AMTCountTagsInDirectory:
         return {
             "required": {
                 "DirectoryPath": ("STRING", {"default": ""}),
+                "Trigger": ("ANY", {"default": None}),  # any upstream value forces execution
                 "Seed": ("INT", {"default": 0}),  # dummy input to force execution
             }
         }
@@ -149,7 +150,7 @@ class AMTCountTagsInDirectory:
     FUNCTION = "count"
     OUTPUT_NODE = True
 
-    def count(self, DirectoryPath, Seed):
+    def count(self, DirectoryPath, Trigger, Seed):
         DirectoryPath = normalize_path(DirectoryPath)
 
         if not os.path.isdir(DirectoryPath):
