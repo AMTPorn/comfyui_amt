@@ -15,7 +15,8 @@ def count_tags_in_directory(directory):
     tag_freq = defaultdict(int)
 
     for filename in os.listdir(directory):
-        if filename.lower().endswith(".txt"):
+        filename_lower = filename.lower()
+        if filename_lower.endswith(".txt") and "-checkpoint.txt" not in filename_lower:
             filepath = os.path.join(directory, filename)
             try:
                 with open(filepath, "r", encoding="utf-8") as f:
