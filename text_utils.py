@@ -140,6 +140,7 @@ class AMTCountTagsInDirectory:
         return {
             "required": {
                 "DirectoryPath": ("STRING", {"default": ""}),
+                "Seed": ("INT", {"default": 0}),  # dummy input to force execution
             }
         }
 
