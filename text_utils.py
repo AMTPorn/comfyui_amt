@@ -149,7 +149,7 @@ class AMTCountTagsInDirectory:
     FUNCTION = "count"
     OUTPUT_NODE = True
 
-    def count(self, DirectoryPath):
+    def count(self, DirectoryPath, Seed):
         DirectoryPath = normalize_path(DirectoryPath)
 
         if not os.path.isdir(DirectoryPath):
@@ -180,12 +180,7 @@ class AMTCountTagsInDirectory:
 
         text = "\n".join(lines)
 
-        return {
-            "ui": {
-                "text": text
-            },
-            "result": (text,)
-        }
+        return (text,)
 
 class AMTEmbedTagFrequencySafetensors:
     @classmethod
